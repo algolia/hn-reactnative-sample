@@ -2,15 +2,11 @@
 
 const React = require('react-native');
 const SearchPage = require('./components/SearchPage');
-const {AppRegistry, LinkingIOS} = React;
+const {AppRegistry} = React;
 
 class reactNativeAlgolia extends React.Component {
   render() {
     return <SearchPage openLink={this.openLink}/>;
-  }
-
-  openLink(url) {
-    LinkingIOS.openURL(url); 
   }
 }
 

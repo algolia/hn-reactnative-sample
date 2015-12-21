@@ -6,6 +6,7 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "algoliasearch": "^3.10.2",
     "algoliasearch-helper": "^2.6.9",
     "react-native": "^0.15.0"
   }
