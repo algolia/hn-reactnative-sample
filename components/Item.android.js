@@ -1,5 +1,6 @@
 const React = require('react-native');
 const {Text, View, Image, TouchableOpacity, IntentAndroid} = React;
+const HighlightedText = require('HighlightedText');
 const styles = require('./styles.js');
 
 class Hit extends React.Component {
@@ -11,7 +12,12 @@ class Hit extends React.Component {
         <View key={hit.objectID} style={styles.hit}>
           <Image source={{uri: imgURI}} style={styles.illustration}/>
           <View style={styles.hitContent}>
-            <Text style={styles.title} numberOfLines={2}>{hit.title}</Text>
+            <HighlightedText tag="**"
+                             style={styles.title}
+                             styles={{highlighted: styles.highlighted}}
+                             numberOfLines={2}>
+              {hit._highlightResult.title.value}
+            </HighlightedText>
             <Text style={styles.url} numberOfLines={1}>{this.keepDomainName(hit.url)}</Text>
           </View>
         </View>

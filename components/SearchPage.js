@@ -30,6 +30,8 @@ class SearchPage extends React.Component {
     });
 
     helper.addTag('story')
+          .setQueryParameter('highlightPreTag', '**')
+          .setQueryParameter('highlightPostTag', '**')
           .addNumericRefinement('created_at_i', '>', yesterday)
           .search();
   }

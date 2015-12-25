@@ -71,5 +71,8 @@ module.exports = StyleSheet.create({
     backgroundColor: '#EEE',
     marginTop: 6,
     marginBottom:6
+  },
+  highlighted: {
+    backgroundColor: '#D4ECF7'
   }
 });
