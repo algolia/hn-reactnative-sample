@@ -1,6 +1,6 @@
 const React = require('react-native');
 const {Text, View, Image, TouchableOpacity, IntentAndroid} = React;
-const HighlightedText = require('HighlightedText');
+const HighlightedText = require('./HighlightedText');
 const styles = require('./styles.js');
 
 class Hit extends React.Component {
