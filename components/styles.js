@@ -55,6 +55,9 @@ module.exports = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEE',
+    paddingVertical: 8,
     margin: 1
   },
   url: {
@@ -66,13 +69,7 @@ module.exports = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start'
   },
-  separator: {
-    height: 1,
-    backgroundColor: '#EEE',
-    marginTop: 6,
-    marginBottom:6
-  },
   highlighted: {
-    backgroundColor: '#D4ECF7'
+    backgroundColor: '#D4ECF7',
   }
 });

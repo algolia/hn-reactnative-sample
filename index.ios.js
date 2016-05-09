@@ -1,13 +1,11 @@
-'use strict';
+import React from 'react';
+import SearchPage from './components/SearchPage';
+import { AppRegistry } from 'react-native';
 
-const React = require('react-native');
-const SearchPage = require('./components/SearchPage');
-const {AppRegistry} = React;
-
-class reactNativeAlgolia extends React.Component {
+class ReactNativeAlgolia extends React.Component {
   render() {
     return <SearchPage openLink={this.openLink}/>;
   }
 }
 
-AppRegistry.registerComponent('reactNativeAlgolia', () => reactNativeAlgolia);
+AppRegistry.registerComponent('reactNativeAlgolia', () => ReactNativeAlgolia);

@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "react-native start"
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
     "algoliasearch": "^3.10.2",
     "algoliasearch-helper": "^2.6.9",
-    "react-native": "^0.15.0"
+    "react": "^0.14.8",
+    "react-native": "^0.25.1"
   }
 }
