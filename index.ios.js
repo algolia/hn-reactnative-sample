@@ -4,8 +4,11 @@ import { AppRegistry } from 'react-native';
 
 class ReactNativeAlgolia extends React.Component {
   render() {
-    return <SearchPage openLink={this.openLink}/>;
+    return <SearchPage />;
   }
 }
 
-AppRegistry.registerComponent('reactNativeAlgolia', () => ReactNativeAlgolia);
+AppRegistry.registerComponent(
+  'reactNativeAlgolia',
+  () => ReactNativeAlgolia
+);
