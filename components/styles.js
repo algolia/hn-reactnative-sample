@@ -4,7 +4,6 @@ module.exports = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#FFF',
   },
   welcome: {
     fontSize: 20,
@@ -17,7 +16,7 @@ module.exports = StyleSheet.create({
   header: {
     padding: 5,
     marginTop: 20,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   logo: {
     height: 45,
@@ -71,5 +70,6 @@ module.exports = StyleSheet.create({
   },
   highlighted: {
     backgroundColor: '#D4ECF7',
+    fontWeight: 'bold',
   }
 });

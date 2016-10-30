@@ -11,6 +11,7 @@ export default class Header extends Component {
           style={styles.searchInput}
           onChange={(e) => this.changeQuery(e)}
           placeholder="Search for stories by title or author"
+          underlineColorAndroid={"transparent"}
           />
       </View>
     );
