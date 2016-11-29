@@ -1,21 +1,22 @@
-const React = require('react-native');
-const { View, TextInput, Image } = React;
-const styles = require('./styles.js');
+import React, { Component } from 'react';
+import { View, TextInput, Image } from 'react-native';
+import styles from './styles.js';
 
-class Header extends React.Component {
+export default class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
         <Image source={require('./img/logo-hn-search.png')} style={styles.logo}/>
         <TextInput
           style={styles.searchInput}
-          onChange={ (e) => this.changeQuery(e) }
+          onChange={(e) => this.changeQuery(e)}
           placeholder="Search for stories by title or author"
+          underlineColorAndroid={"transparent"}
           />
       </View>
     );
   }
-  
+
   changeQuery(e){
     const q = e.nativeEvent.text;
     const helper = this.props.helper;
@@ -27,5 +28,3 @@ class Header extends React.Component {
           .search();
   }
 }
-
-module.exports = Header;

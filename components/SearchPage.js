@@ -1,21 +1,19 @@
-'use strict';
-
-const React = require('react-native');
-const {
+import React, { Component } from 'react';
+import {
   AppRegistry,
   Text,
   View,
-  LinkingIOS
-} = React;
+  Linking,
+} from 'react-native';
 
-const Results = require('./Results');
-const Header = require('./Header');
-const styles = require('./styles.js');
+import Results from './Results';
+import Header from './Header';
+import styles from './styles.js';
 
 const algoliasearch = require('algoliasearch/reactnative')('UJ5WYC0L7X', 'fa417a2309d484b364e87de9f82baa29');
-const AlgoliaSearchHelper = require('algoliasearch-helper');
+import AlgoliaSearchHelper from 'algoliasearch-helper';
 
-class SearchPage extends React.Component {
+export default class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = { lastSearchResults: null };
@@ -37,9 +35,8 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    const content = this.state.lastSearchResults ?
-      <Results hits={this.state.lastSearchResults.hits} openLink={this.openLink}/> :
-      undefined;
+    const content = this.state.lastSearchResults &&
+      <Results hits={this.state.lastSearchResults.hits} openLink={this.openLink}/>;
 
     return (
       <View style={styles.container}>
@@ -50,8 +47,7 @@ class SearchPage extends React.Component {
   }
 
   openLink(url) {
-    LinkingIOS.openURL(url); 
+    Linking.openURL(url);
   }
 }
 
-module.exports = SearchPage;

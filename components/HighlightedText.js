@@ -1,22 +1,16 @@
-const React = require('react-native');
-const { Text } = React;
+import React from 'react';
+import { Text } from 'react-native';
 
-class HighlightedText extends React.Component {
-  render() {
-    let isNextHighlighted = false;
-    const tag = this.props.tag;
-    const text = this.props.children;
-    const styles = this.props.styles;
-    const texts = text.split(tag).map(function(t){
+export default function HighlightedText({ tag, children, styles, style }) {
+  let isNextHighlighted = false;
+  const texts = children
+    .split(tag)
+    .map((t, i) => {
       const style = isNextHighlighted ? styles.highlighted : styles.normal;
       isNextHighlighted = !isNextHighlighted;
-      return <Text style={style}>{t}</Text>;
-    });
-    const nextProps = {...this.props};
-    if(nextProps.styles) delete nextProps.styles;
-    if(nextProps.tag) delete nextProps.tag;
-    return <Text style={this.props.style}>{texts}</Text>;
-  }
-}
 
-module.exports = HighlightedText;
+      return <Text key={i} style={style}>{t}</Text>;
+    });
+
+  return <Text style={style}>{texts}</Text>;
+}

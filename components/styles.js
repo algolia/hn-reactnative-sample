@@ -4,7 +4,6 @@ module.exports = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#FFF',
   },
   welcome: {
     fontSize: 20,
@@ -17,7 +16,7 @@ module.exports = StyleSheet.create({
   header: {
     padding: 5,
     marginTop: 20,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   logo: {
     height: 45,
@@ -55,6 +54,9 @@ module.exports = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEE',
+    paddingVertical: 8,
     margin: 1
   },
   url: {
@@ -66,13 +68,8 @@ module.exports = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start'
   },
-  separator: {
-    height: 1,
-    backgroundColor: '#EEE',
-    marginTop: 6,
-    marginBottom:6
-  },
   highlighted: {
-    backgroundColor: '#D4ECF7'
+    backgroundColor: '#D4ECF7',
+    fontWeight: 'bold',
   }
 });

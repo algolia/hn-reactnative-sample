@@ -1,9 +1,10 @@
-var React = require('react-native');
-var {ListView, View} = React;
-var Item = require('./Item');
-const styles = require('./styles.js');
+import React, { Component } from 'react';
+import { ListView, View } from 'react-native';
+import Item from './Item';
+import styles from './styles.js';
 
-class Results extends React.Component {
+export default class Results extends Component {
+
   constructor(props){
     super(props);
     const ds = new ListView.DataSource({
@@ -14,20 +15,16 @@ class Results extends React.Component {
   }
   render() {
     return (
-      <ListView style={styles.results}
-                dataSource={this.state.hits}
-                renderSeparator={this.renderSeparator}
-                renderRow={
-                  (hit) => <Item hit={hit} openLink={this.props.openLink}/>
-                } />
+      <ListView
+        style={styles.results}
+        dataSource={this.state.hits}
+        renderRow={
+          (hit) => <Item key={hit.objectID} hit={hit} openLink={this.props.openLink}/>
+        } />
     );
   }
   componentWillReceiveProps(props) {
     this.setState({hits: this.state.hits.cloneWithRows(props.hits)});
   }
-  renderSeparator() {
-    return <View style={styles.separator}/>
-  }
 }
 
-module.exports = Results;
